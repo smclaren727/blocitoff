@@ -1,7 +1,21 @@
-<div class="container">
-  <h2>User Profile</h2>
-  <br>
-  <h4>User Email: <%= @user.email %></h4>
-  <h4>User ID: <%= @user.id %></h4>
-  <h4>Last Signed In @: <%= @user.last_sign_in_at %> </h4>
-</div>
+<div class="row">
+  <div class="col-md-8">
+    <h3><%= current_user.name %></h3>
+    <p><%= current_user.email %>
+  </div>
+<div class="col-md-8">
+
+  <h1>My Checklist</h1>
+    <div class='new-comment'; style='margin-top: 15px;'>
+      <%= render partial: 'items/form', locals: { item: @item } %>
+    </div>
+
+    <table class="table table-hover">
+      <tr>
+        <th>Item</th>
+        <th>Days Left</th>
+       </tr> 
+      <%= render @items %>
+  </table>
+
+</div>  

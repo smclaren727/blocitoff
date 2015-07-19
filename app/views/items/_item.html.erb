@@ -1,0 +1,4 @@
+<% items.each do |item| %> 
+<p><b><p id="item-<%= item.id %>"><%= item.name %></b> Days left to complete: <%= item.days_left %> 
+  <%= link_to "", [current_user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %></p>
+<% end %>
