@@ -21,9 +21,9 @@ class ItemsController < ApplicationController
     @item = current_user.items.build(item_params)
 
     if @item.save
-      flash[:notice] = "Item was saved."
+      flash[:notice] = "Task was saved."
     else
-      flash[:error] = "There was an error saving the item. Please try again."
+      flash[:error] = "There was an error saving the task. Please try again."
     end
 
     redirect_to root_path
@@ -32,10 +32,10 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     if @item.destroy
-      flash[:notice] = "To-do was destroyed"
+      flash[:notice] = "The task was destroyed"
       redirect_to items_path
     else
-      flash[:notice] = "There was a problem destroying the to-do"
+      flash[:notice] = "There was a problem destroying the task"
       redirect_to items_path
     end
   end
