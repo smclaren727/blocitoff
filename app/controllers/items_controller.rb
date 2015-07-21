@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def days_left
-      7 - (DateTime.now.to_date - created_at.to_date).to_i
+    7 - (DateTime.now.to_date - created_at.to_date).to_i
   end
 
   def show
@@ -18,19 +18,15 @@ class ItemsController < ApplicationController
   end
 
   def create
-     @item = current_user.items.build(item_params)
+    @item = current_user.items.build(item_params)
 
     if @item.save
-       flash[:notice] = "Item was saved."
-     else
-       flash[:error] = "There was an error saving the item. Please try again."
-     end
-     redirect_to root_path
+      flash[:notice] = "Item was saved."
+    else
+      flash[:error] = "There was an error saving the item. Please try again."
+    end
 
-    # respond_to do |format|
-    #  format.html
-    #  format.js
-    # end
+    redirect_to root_path
   end
 
   def destroy
@@ -45,7 +41,7 @@ class ItemsController < ApplicationController
   end
 
 
-  private
+private
 
   def item_params
     params.require(:item).permit(:name)

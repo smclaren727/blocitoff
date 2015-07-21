@@ -8,26 +8,16 @@
      </div>
    </div>
  </div> 
- </div>
 
 <br/>
-
+<div class="row">
 <div class="col-md-10">
 
 <h2>My List</h2>
-
-<% @items.each do |item| %>
-  <%= item.name %>
-  <%= item.days_left %>
-  <%= link_to "complete", item, method: :delete, class: 'glyphicon glyphicon-ok', data: { confirm: 'Are you sure you want to delete this to-do?'} %>
-
-  </br>
-
-  <br>
-
-<% end %>
-
+<%= render @items %>
 
   <div class='new-item'>
     <%= render partial: 'items/form', locals: { item: Item.new } %>
   </div>
+</div>
+</div>

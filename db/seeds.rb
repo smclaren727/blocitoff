@@ -1,7 +1,7 @@
 require 'faker'
 
 # Create Users
-10.times do
+1.times do
   user = User.new(
     name:     Faker::Name.name,
     email:    Faker::Internet.email,
